@@ -1,0 +1,104 @@
+[
+  {
+    "id": "firstName",
+    "type": "text",
+    "label": "First Name",
+    "value": "",
+    "validation": {
+      "required": true
+    }
+  },
+  {
+    "id": "lastName",
+    "type": "text",
+    "label": "Last Name",
+    "value": "",
+    "validation": {
+      "required": true
+    }
+  },
+  {
+    "id": "age",
+    "type": "number",
+    "label": "Age",
+    "value": "",
+    "validation": {
+      "required": true,
+      "min": 18
+    }
+  },
+  {
+    "id": "email",
+    "type": "text",
+    "label": "Email",
+    "value": "",
+    "validation": {
+      "required": true,
+      "pattern": "^[\\w.-]+@[\\w.-]+\\.\\w{2,}$",
+      "errorMessage": "Please enter a valid email address"
+    }
+  },
+  {
+    "id": "isStudent",
+    "type": "checkbox",
+    "label": "Are you a student?",
+    "value": false
+  },
+  {
+    "id": "schoolName",
+    "type": "text",
+    "label": "School Name",
+    "value": "",
+    "conditional": {
+      "field": "isStudent",
+      "value": true
+    }
+  },
+  {
+    "id": "employmentStatus",
+    "type": "dropdown",
+    "label": "Employment Status",
+    "value": "",
+    "options": ["Employed", "Unemployed", "Student"],
+    "validation": {
+      "required": true
+    }
+  },
+  {
+    "id": "companyName",
+    "type": "text",
+    "label": "Company Name",
+    "value": "",
+    "conditional": {
+      "field": "employmentStatus",
+      "value": "Employed"
+    }
+  },
+  {
+    "id": "studentID",
+    "type": "number",
+    "label": "Student ID",
+    "value": "",
+    "conditional": {
+      "field": "employmentStatus",
+      "value": "Student"
+    }
+  },
+  {
+    "id": "newsletter",
+    "type": "checkbox",
+    "label": "Subscribe to newsletter?",
+    "value": false
+  },
+  {
+    "id": "newsletterFrequency",
+    "type": "dropdown",
+    "label": "Newsletter Frequency",
+    "value": "",
+    "options": ["Daily", "Weekly", "Monthly"],
+    "conditional": {
+      "field": "newsletter",
+      "value": true
+    }
+  }
+]
